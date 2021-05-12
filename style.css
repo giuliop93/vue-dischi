@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    background-color:rgb(112, 194, 186);
+    width: 100vw;
+}
+
+.wrapper {
+    width: 1024px;
+    margin: auto;
+}
+
+.album-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.album {
+    padding: 10px;
+    flex-basis: calc(100% / 3);
+}
+
+.album img {
+    /* max-height: 250px; */
+    width: 30%;
+    /* object-fit: cover; */
+}

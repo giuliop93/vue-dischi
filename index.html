@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://use.fontawesome.com/0a1c4f296a.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>My Albums</h1>
+            <div class="filter">
+                <!-- <select name="" id="" @change="onSelectChange"></select> -->
+                <!-- oppure? -->
+                <select v-model="selectedGenre">
+                    <option value="">Tutti i generi</option>
+                    <option v-for="genere in genres" :value="genere">
+                        {{ genere }}
+                    </option>
+                </select>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="wrapper">
+                <div class="album-wrapper">
+                    <div class="album" v-for="album in albums"
+                        v-if="selectedGenre == '' || selectedGenre == album.genre">
+                        <img :src="album.poster" :alt="album.title">
+                        <h3>{{ album.title }}</h3>
+                        <span class="author">{{ album.author }}</span>
+                        <span class="year">{{ album.year }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+<!-- <div class="cd" v-for="disco in dischi" v-if="genere_selezionato == '' || genere_selezionato == disco.genre">
+        <img :src="disco.poster" :alt="disco.title">
+        <h3>{{ disco.title }}</h3>
+        <span class="author">{{ disco.author }}</span>
+        <span class="year">{{ disco.year }}</span>
+    </div>
+
+</div>
+</div>
+</div>
+
+<script src="main.js" charset="utf-8"></script>
+</body>
+
+</html> -->
