@@ -6,9 +6,9 @@ const app = new Vue({
         selectedGenre: ""
     },
     methods() {
-        this.dischi.forEach(disco => {
-            if (!this.generi.includes(disco.genre)) {
-                this.generi.push(disco.genre);
+        this.dischi.forEach(album => {
+            if (!this.generi.includes(album.genre)) {
+                this.generi.push(album.genre);
             }
         });
         mounted() 
