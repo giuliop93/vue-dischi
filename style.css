@@ -26,7 +26,5 @@
 }
 
 .album img {
-    /* max-height: 250px; */
     width: 30%;
-    /* object-fit: cover; */
 }
